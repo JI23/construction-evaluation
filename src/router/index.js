@@ -26,6 +26,10 @@ import step5 from "../components/User/Function/newpjStep/step5.vue";
 import step6 from "../components/User/Function/newpjStep/step6.vue";
 
 
+//我的项目
+import successpj from "../components/User/Function/mypj/successpj.vue";
+import unsuccesspj from "../components/User/Function/mypj/unsuccesspj.vue";
+
 Vue.use(Router)
 
 export default new Router({
@@ -105,7 +109,20 @@ export default new Router({
         }, {
           path: '/mypj',
           name: "mypj",
-          component: MyProject
+          component: MyProject,
+          redirect:'/mypj/successpj',
+          children:[
+            {
+              path:'/mypj/successpj',
+              name:'successpj',
+              component:successpj
+            },
+            {
+              path:'/mypj/unsuccesspj',
+              name:'unsuccesspj',
+              component:unsuccesspj
+            }
+          ]
         },
         {
           path: '/refer',
