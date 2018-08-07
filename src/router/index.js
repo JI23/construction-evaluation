@@ -17,6 +17,15 @@ import Refer from "../components/User/Function/Refer.vue";
 import Feedback from "../components/User/Function/Feedback.vue";
 import PersonInfo from "../components/User/Function/PersonInfo.vue";
 
+//新建项目的步骤条
+import step1 from "../components/User/Function/newpjStep/step1.vue";
+import step2 from "../components/User/Function/newpjStep/step2.vue";
+import step3 from "../components/User/Function/newpjStep/step3.vue";
+import step4 from "../components/User/Function/newpjStep/step4.vue";
+import step5 from "../components/User/Function/newpjStep/step5.vue";
+import step6 from "../components/User/Function/newpjStep/step6.vue";
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -59,7 +68,40 @@ export default new Router({
         }, {
           path: '/newpj',
           name: "newpj",
-          component: NewProject
+          component: NewProject,
+          redirect:'/newpj/step1',
+          children: [
+            {
+              path: '/newpj/step1',
+              name: 'step1',
+              component: step1
+            },
+            {
+              path: '/newpj/step2',
+              name: 'step2',
+              component: step2
+            },
+            {
+              path: '/newpj/step3',
+              name: 'step3',
+              component: step3
+            },
+            {
+              path: '/newpj/step4',
+              name: 'step4',
+              component: step4
+            },
+            {
+              path: '/newpj/step5',
+              name: 'step5',
+              component: step5
+            },
+            {
+              path: '/newpj/step6',
+              name: 'step6',
+              component: step6
+            }
+          ]
         }, {
           path: '/mypj',
           name: "mypj",
