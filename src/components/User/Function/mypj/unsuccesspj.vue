@@ -39,8 +39,8 @@
         label="操作"
         width="130">
         <template slot-scope="scope">
-          <el-button @click="" type="text" size="small">编辑</el-button>
-          <el-button @click="" type="text" size="small">删除</el-button>
+          <el-button @click="editpj(scope.row.name)" type="text" size="small">编辑</el-button>
+          <el-button @click="deletepj(scope.row.name)" type="text" size="small">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -66,6 +66,12 @@
       },
       handleCurrentChange: function(currentPage){
         this.currentPage = currentPage;
+      },
+      editpj: function(pjname){
+        console.log(pjname)
+      },
+      deletepj: function(pjname){
+        console.log(pjname)
       }
     },
 

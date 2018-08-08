@@ -39,9 +39,9 @@
         label="操作"
         width="130">
         <template slot-scope="scope">
-          <el-button @click="" type="text" size="small">查看</el-button>
-          <el-button @click="" type="text" size="small">拷贝</el-button>
-          <el-button @click="" type="text" size="small">删除</el-button>
+          <el-button @click="overlook" type="text" size="small">查看</el-button><!--未写 -->
+          <el-button @click="jumpstep1" type="text" size="small">拷贝</el-button>
+          <el-button @click="deletepj" type="text" size="small">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -67,6 +67,15 @@
       },
       handleCurrentChange: function(currentPage){
         this.currentPage = currentPage;
+      },
+      jumpstep1: function(){
+        this.$router.push({name:'step1'});
+      },
+      overlook: function(){
+
+      },
+      deletepj: function(){
+
       }
     },
 
