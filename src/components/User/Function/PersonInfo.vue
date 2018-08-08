@@ -1,3 +1,5 @@
 <template>
-    <div>个人信息</div>
+<div>
+    <router-view></router-view>
+</div>
 </template>
