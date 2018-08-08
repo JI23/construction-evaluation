@@ -7,15 +7,15 @@
             </el-carousel>
         </div>
         <br><br>
-        <div class="box" style= "background:rgba(213,153,168,1)">
+        <div class="box2" style= "background:rgba(213,153,168,1)">
             <h4>已完成项目</h4>
             <p>hhh</p>
         </div>
-        <div class="box" style= "background:rgba(233,240,29,1)">
+        <div class="box2" style= "background:rgba(233,240,29,1)">
             <h4>未完成项目</h4>
             <p>hhh</p>
         </div>
-        <div class="box">
+        <div class="box2">
             <h4>项目总数</h4>
             <p>hhh</p>
         </div>
@@ -49,10 +49,10 @@
     background: url(../../../assets/hometest1.jpg) center no-repeat;
   }
 
-  .box{
+  .box2{
     position:relative;/*相对定位:参考物*/
     float:left;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
-    width:180px;
+    width:25%;
     height:100px;
     margin:18px 20px;
     background:rgba(241,124,103,1);/*red红色 green绿色 blue蓝色0-255  a透明度0-1*/

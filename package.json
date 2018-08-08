@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "element-ui": "^2.4.5",
+    "kiko-rascalhao": "^1.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -65,8 +66,4 @@
     "last 2 versions",
     "not ie <= 8"
   ]
-  
 }
-
-
-
