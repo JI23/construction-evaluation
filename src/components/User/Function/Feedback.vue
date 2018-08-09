@@ -1,3 +1,3 @@
 <template>
-    <div>反馈信息</div>
+<router-view></router-view>
 </template>
