@@ -37,6 +37,23 @@ import addfeedback from "../components/User/Function/feed/addfeedback.vue";
 import successpj from "../components/User/Function/mypj/successpj.vue";
 import unsuccesspj from "../components/User/Function/mypj/unsuccesspj.vue";
 
+//易损性数据库
+import viewdb from "../components/User/Function/refer/viewdb.vue";
+import newdb from "../components/User/Function/refer/newdb.vue";
+//新建易损性数据库
+import general_info from "../components/User/Function/refer/general_info";
+import statenum from "../components/User/Function/refer/statenum";
+import consequence from "../components/User/Function/refer/consequence";
+import damage_state from "../components/User/Function/refer/damage_state";
+//generalinfo部分
+import generalinfo from "../components/User/Function/refer/generalinfo/generalinfo";
+import notes from "../components/User/Function/refer/generalinfo/notes";
+//consequence部分
+import gen_info from "../components/User/Function/refer/consequence/gen_info";
+import others from "../components/User/Function/refer/consequence/others.vue";
+import re_cost from "../components/User/Function/refer/consequence/re_cost";
+import re_time from "../components/User/Function/refer/consequence/re_time";
+
 Vue.use(Router)
 
 export default new Router({
@@ -135,6 +152,78 @@ export default new Router({
           path: '/refer',
           name: "refer",
           component: Refer,
+          redirect: '/refer/viewdb',
+          children:[
+            {
+              path:'/refer/viewdb',
+              name:'viewdb',
+              component:viewdb
+            },
+            {
+              path:'/refer/newdb',
+              name:'newdb',
+              component:newdb,
+              redirect: '/refer/general_info',
+              children:[
+                {
+                  path:'/refer/consequence',
+                  name:'consequence',
+                  component:consequence,
+                  redirect:'/refer/consequence/gen_info',
+                  children:[
+                    {
+                      path:'/refer/consequence/gen_info',
+                      name:'gen_info',
+                      component:gen_info
+                    },
+                    {
+                      path:'/refer/consequence/others',
+                      name:'others',
+                      component:others
+                    },
+                    {
+                      path:'/refer/consequence/re_cost',
+                      name:'re_cost',
+                      component:re_cost
+                    },
+                    {
+                      path:'/refer/consequence/re_time',
+                      name:'re_time',
+                      component:re_time
+                    }
+                  ]
+                },
+                {
+                  path:'/refer/general_info',
+                  name:'general_info',
+                  component:general_info,
+                  redirect:'/refer/generalinfo/generalinfo',
+                  children:[
+                    {
+                      path:'/refer/generalinfo/generalinfo',
+                      name:'generalinfo',
+                      component:generalinfo
+                    },
+                    {
+                      path:'/refer/generalinfo/notes',
+                      name:'notes',
+                      component:notes
+                    }
+                  ]
+                },
+                {
+                  path:'/refer/damage_state',
+                  name:'damage_state',
+                  component:damage_state
+                },
+                {
+                  path:'/refer/statenum',
+                  name:'statenum',
+                  component:statenum
+                }
+              ]
+            },
+          ]
         },
         {
           path:"/feedbk",

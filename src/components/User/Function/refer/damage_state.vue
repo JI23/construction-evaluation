@@ -1,14 +1,17 @@
 <template>
-    <div>
-        <router-view></router-view>
-    </div>
+  <div>
+    <p>画图</p>
+  </div>
 </template>
 
 <script>
     export default {
       data() {
         return {
-          
+          data: [{
+            
+          }],
+  
         }
       },
 
@@ -17,3 +20,8 @@
       }
   }
 </script>
+
+
+<style scoped>
+
+</style>

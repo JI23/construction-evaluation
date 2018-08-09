@@ -1,11 +1,10 @@
 <template> 
   <div>
     <el-table
-      :data="tableData"
+      :data="data.slice((currentPage-1)*pagesize,currentPage*pagesize)"
       border
      >
       <el-table-column
-        fixed
         prop="date"
         label="日期"
         width="150">
@@ -40,32 +39,49 @@
         label="操作"
         width="130">
         <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-          <el-button type="text" size="small">拷贝</el-button>
-          <el-button type="text" size="small">删除</el-button>
+          <el-button @click="overlook" type="text" size="small">查看</el-button><!--未写 -->
+          <el-button @click="jumpstep1" type="text" size="small">拷贝</el-button>
+          <el-button @click="deletepj" type="text" size="small">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
     <el-pagination
-      background
-      layout="prev, pager, next"
-      :total="1000">
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="currentPage"
+      :page-sizes="[5, 20, 50, 100]"
+      :page-size="pagesize"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="data.length"
+      style="text-align: center">
     </el-pagination>
   </div>
-
+  
 </template>
 
 <script>
   export default {
-    methods: {
-      handleClick(row) {
-        console.log(row);
+    methods:{
+      handleSizeChange: function (size) {
+        this.pagesize = size;
+      },
+      handleCurrentChange: function(currentPage){
+        this.currentPage = currentPage;
+      },
+      jumpstep1: function(){
+        this.$router.push({name:'step1'});
+      },
+      overlook: function(){
+
+      },
+      deletepj: function(){
+
       }
     },
 
-    data() {
+    data () {
       return {
-        tableData: [{
+        data: [{
           date: '2016-05-03',
           name: '王小虎',
           pjnum: '上海',
@@ -93,8 +109,151 @@
           pjhead: '普陀区',
           grade: '上海市',
           explain: 200333
-        }]
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          pjnum: '上海',
+          pjhead: '普陀区',
+          grade: '上海市',
+          explain: 200333
+        }],
+        currentPage:1,
+        pagesize:5,
+  
       }
-    }
+    },  
   }
 </script>

@@ -1,0 +1,69 @@
+<template>
+  <div>
+    <div style="height:130px" class="box8" >
+      <el-col>
+        <el-switch v-model="value1" active-text="Possible Unsafe Placard Consequers" inactive-text=""></el-switch>
+        <br>
+        <span class="lebal">Fraction of Total Quanttities to Trigger Ubsafe Placard</span><br>
+        <span>Median:</span>
+        <el-input style="width:35%" size="mini" placeholder="请输入内容" v-model="input1"></el-input>
+        <el-input style="width:35%;float:right" size="mini" placeholder="请输入内容" v-model="input2"></el-input>
+        <span style="float:right">Dispersio:</span>
+        <span>This fraction should relate to the total quantity from all Performance group in this damage state</span>
+      </el-col>
+    </div>
+    <div style="height:130px" class="box8">
+      <span>Potential for Non-Collapse Casualties::ality Rate in Affected Area:</span>
+      <br><span>Median:</span>
+      <el-input style="width:35%" size="mini" placeholder="请输入内容" v-model="input1"></el-input>
+      <el-input style="width:35%;float:right" size="mini" placeholder="请输入内容" v-model="input2"></el-input>
+      <span style="float:right">Dispersio:</span>
+      <span>Occupied Area Affected Per Performance Group Unit(sq.</span>
+      <el-input style="width:20%" size="mini" placeholder="请输入内容" v-model="input1"></el-input>
+      <span>Injury Rate in Affected Area:</span><br>
+      <span>Median:</span>
+      <el-input style="width:35%" size="mini" placeholder="请输入内容" v-model="input1"></el-input>
+      <el-input style="width:35%;float:right" size="mini" placeholder="请输入内容" v-model="input2"></el-input>
+      <span style="float:right">Dispersio:</span>
+    </div>
+    <div style="height:40px" class="box8">
+      <el-switch v-model="value1" active-text="Use Long Lead Time Flag" inactive-text=""></el-switch>
+    </div>
+    
+    
+  </div>
+</template>
+
+<script>
+    export default {
+      data() {
+        return {
+          value1: '1',
+          input1: '',
+          input2: ''
+  
+        }
+      },
+
+  }
+</script>
+
+
+<style>
+  .box8{
+    position:relative;/*相对定位:参考物*/
+    float: left;;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
+    top:5px;
+    width:90%;
+    margin:18px 20px;
+    
+    
+}
+  .lebal{
+    position:relative;
+    display: inline-block;
+    padding:9px 0;
+    color: #333;
+  }
+
+</style>
