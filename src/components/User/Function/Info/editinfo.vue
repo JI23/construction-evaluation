@@ -11,20 +11,20 @@
             <span class="lebal">公司职务</span>
             <el-input v-model="composition" placeholder="已注册内容"></el-input>
         </el-col>
-         <el-col :span="1" style="color:transparent">''</el-col> -->
+        <el-col :span="3" style="color:transparent">''</el-col> 
         <el-col :span="11">
             <h3>更改绑定信息</h3>
+            <br>
+            <br>
              <el-button type="text" >更改邮箱</el-button>
              <br>
-             <!-- <span class="lebal">更改邮箱</span> -->
-            <!-- <el-input v-model="youremial" placeholder="请输入新的邮箱"></el-input>
-            <span class="lebal">更改手机号</span>
-            <el-input v-model="phone" placeholder="请输入新的手机号"></el-input>
-            <span class="lebal">更改密码</span>
-            <el-input v-model="password" placeholder="请输入新的密码"></el-input> -->
+             <br>
              <el-button type="text" >更换手机号</el-button>
              <br>
-              <el-button type="text" >更改密码</el-button>
+             <br>
+            <el-button type="text" >更改密码</el-button>
+            <br>
+            <br>
             <br>
             <br>
             <br>

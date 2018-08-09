@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="div1">
-            这里放图片
+            联系我们
         </div>
         <div class=div2>
-            <el-col :span="1" style="color:transparent">''</el-col>
+            <el-col :span="2" style="color:transparent">''</el-col>
             <el-col :span="15">
             <h3>评论反馈</h3>
             <span class="lebal">联系方式</span>
@@ -13,7 +13,8 @@
             <el-input v-model="fbtitle" placeholder="请输入标题"></el-input>
             <span class="lebal">评论内容</span>
             <el-input type="textarea"  v-model="fbcontent" placeholder="请输入您的反馈内容"></el-input>
-
+            <br>
+            <br>
             <el-button type="primary" style="margin:20px;" @click="sendfeedback">发送</el-button>
         </el-col>
         </div>
@@ -41,7 +42,7 @@ export default {
         display: inline-block;
         padding:10px 0;
         color: #333;
-        font-size:12px;
+        font-size:13px;
     }
     el-input{
         margin-top:5px;
@@ -49,13 +50,15 @@ export default {
     }
     .div1{
         height:400px;
-        width:50%;
-         float:left; 
-        background-color:rgb(174, 182, 174);
+        width:40%;
+        float:left; 
+        background-color:#F2F2F2;
+        border-radius:5px;
+        text-align: center;
     }
      .div2{
-        width:50%;
-         float:left; 
+        width:60%;
+        float:left; 
         
     }
 
