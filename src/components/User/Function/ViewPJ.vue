@@ -1,27 +1,18 @@
 <template>
     <div>
-        <p>画图</p>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
     export default {
         data() {
-          return {
-            data: [{
+            return {
               
-            }],
-    
-          }
+            }
         },
 
         methods: {
-          
         }
-  }
+    }
 </script>
-
-
-<style scoped>
-
-</style>

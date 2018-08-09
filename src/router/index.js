@@ -16,6 +16,7 @@ import MyProject from "../components/User/Function/MyProject.vue";
 import Refer from "../components/User/Function/Refer.vue";
 import Feedback from "../components/User/Function/Feedback.vue";
 import PersonInfo from "../components/User/Function/PersonInfo.vue";
+import ViewPJ from "../components/User/Function/ViewPJ.vue";
 
 //新建项目的步骤条
 import step1 from "../components/User/Function/newpjStep/step1.vue";
@@ -36,6 +37,10 @@ import addfeedback from "../components/User/Function/feed/addfeedback.vue";
 //我的项目
 import successpj from "../components/User/Function/mypj/successpj.vue";
 import unsuccesspj from "../components/User/Function/mypj/unsuccesspj.vue";
+
+//
+import view from "../components/User/Function/viewpj/view.vue";
+import detail from "../components/User/Function/viewpj/detail.vue";
 
 //易损性数据库
 import viewdb from "../components/User/Function/refer/viewdb.vue";
@@ -260,7 +265,28 @@ export default new Router({
               component:editinfo
             }
           ]
-        }
-       ] }
-    ]
-  })
+        },
+        {
+          path: "/viewPJ",
+          name: 'viewPJ',
+          component: ViewPJ,
+          redirect:"/viewpj/view",
+          children:[
+            {
+              path:'/viewpj/detail',
+              name:'detail',
+              component:detail
+            },
+            {
+              path:'/viewpj/view',
+              name:'view',
+              component:view
+            }
+          ]
+        },
+      ]
+    }
+  ]
+})
+          
+          
