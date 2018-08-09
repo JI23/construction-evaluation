@@ -26,6 +26,13 @@ import step4 from "../components/User/Function/newpjStep/step4.vue";
 import step5 from "../components/User/Function/newpjStep/step5.vue";
 import step6 from "../components/User/Function/newpjStep/step6.vue";
 
+//个人信息
+import myinfo from "../components/User/Function/Info/myinfo.vue";
+import editinfo from "../components/User/Function/Info/editinfo.vue";
+
+//反馈信息
+import feedbacklist from "../components/User/Function/feed/feedbacklist.vue";
+import addfeedback from "../components/User/Function/feed/addfeedback.vue";
 
 //我的项目
 import successpj from "../components/User/Function/mypj/successpj.vue";
@@ -226,12 +233,38 @@ export default new Router({
         {
           path:"/feedbk",
           name:'feedbk',
-          component:Feedback
+          component:Feedback,
+          redirect:'/feedbk/feedbacklist',
+          children:[
+            {
+              path:'/feedbk/feedbacklist',
+              name:'feedbacklist',
+              component:feedbacklist
+            },
+            {
+              path:'/feedbk/addfeedback',
+              name:'addfeedback',
+              component:addfeedback
+            }
+          ]
         },
         {
           path: "/userinfo",
           name: 'userinfo',
-          component: PersonInfo
+          component: PersonInfo,
+          redirect:'/userinfo/myinfo',
+          children:[
+            {
+              path:'/userinfo/myinfo',
+              name:'myinfo',
+              component:myinfo
+            },
+            {
+              path:'/userinfo/editinfo',
+              name:'editinfo',
+              component:editinfo
+            }
+          ]
         },
         {
           path: "/viewPJ",
@@ -255,3 +288,5 @@ export default new Router({
     }
   ]
 })
+          
+          
