@@ -102,18 +102,20 @@
             { required: true, validator: validatePass2, trigger: 'blur' }
           ],
            youremail: [
-            { required: true,  trigger: 'blur' }
+            { required: true, message: '请输入您的邮箱',trigger: 'blur' }
           ],
            phone: [
-            { required: true,  trigger: 'blur' }
+            { required: true, message: '请输入您的手机号', trigger: 'blur' }
           ],
            architectnum: [
             {   trigger: 'blur' }
           ],
           comname: [
-            { required: true,  trigger: 'blur' }
+            { required: true, message: '请输入公司名称',trigger: 'blur' }
           ],
-         
+         comnum: [
+            { required: true, message: '请输入证件号',trigger: 'blur' }
+          ],
         }
       };
     },
