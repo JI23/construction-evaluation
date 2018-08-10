@@ -2,7 +2,7 @@
     <div>
     <el-form  label-position="left" label-width="90px" :model="formLabelAlign">
         <el-row>
-            <el-col span="10">
+            <el-col :span="10">
                 <el-form-item label="昵称">
                 <el-input v-model="formLabelAlign.nickname" placeholder="已注册内容"></el-input>
                 </el-form-item>
@@ -23,7 +23,7 @@
                 </el-form-item>
                 </el-col>
             <el-col :span="1" style="color:transparent">''</el-col>
-            <el-col span="10">
+            <el-col :span="10">
                 <el-form-item label="公司名称">
                 <el-input v-model="formLabelAlign.comname" placeholder="已注册内容"></el-input>
                 </el-form-item>

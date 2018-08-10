@@ -32,7 +32,7 @@
   }
 </script>
 
-<style>
+<style scoped>
     .el-carousel__item:nth-child(4n) {
         background: url(../../../assets/hometest2.jpg) center no-repeat;
     }

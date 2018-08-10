@@ -18,8 +18,7 @@
         </div>
         <div class="box7">
             <h2>证书信息</h2>
-            <div class="box10">
-              
+            <div class="box10">     
             </div>
             <h2>项目说明</h2>
             <el-input :disabled="true" style="width:100%" type="textarea" :rows="4" placeholder="请输入内容" v-model="textarea1"></el-input>
@@ -49,7 +48,7 @@
 </script>
 
 
-<style>
+<style scoped>
     .box7{
         position:relative;/*相对定位:参考物*/
         float: left;;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
