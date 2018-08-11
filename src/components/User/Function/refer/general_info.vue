@@ -1,7 +1,9 @@
 <template>
     <div>
-        <el-button style="position: relative; left: 30px;top: 20px" type="info" round @click="general">general info</el-button>
-        <el-button style="position: relative; left: 30px;top: 20px" type="info" round @click="notes">notes</el-button>
+        <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+            <el-tab-pane label="generalInfo" name="generalinfo"></el-tab-pane>
+            <el-tab-pane label="notes" name="notes"></el-tab-pane>
+        </el-tabs>
         <router-view></router-view>
     </div>
 </template>
@@ -10,15 +12,19 @@
     export default {
         data() {
             return {
+                activeName: 'generalInfo'
             }
         },
 
         methods: {
-            general(){
-                this.$router.push({name:'generalinfo'});
-            },
-            notes(){
-                this.$router.push({name:'notes'});
+            handleClick(tab, event) {
+                //console.log(tab, event);
+                if(tab.name === "generalinfo"){
+                    this.$router.push({name:'generalinfo'});
+                }
+                else if(tab.name === "notes"){
+                    this.$router.push({name:'notes'});
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="box7" >
+        <div class="wrapper5" >
             <el-col>
               <span class="lebal">Lower Quantity</span>
               <el-input size="mini" style="width:100%" v-model="l_quantity" placeholder="请输入内容"></el-input>
@@ -14,7 +14,7 @@
               <el-input size="mini" style="width:100%" v-model="COV" placeholder="请输入内容"></el-input>
           </el-col>
         </div>
-        <div class="box7">
+        <div class="wrapper5">
             <el-col >
                 <span class="lebal">项目编号</span>
                     <el-select size="mini" v-model="value0" placeholder="请选择">
@@ -80,8 +80,8 @@
 </script>
 
 
-<style>
-    .box7{
+<style scoped>
+    .wrapper5{
         position:relative;/*相对定位:参考物*/
         float: left;;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
         top:5px;

@@ -1,3 +1,4 @@
+<!-- 传入value4的值选择易损性数据库显示数据 -->
 <template>
     <div>
         <el-main>
@@ -75,10 +76,13 @@
           newdb(){
               this.$router.push({name:'newdb'});
           },
-          handleNodeClick(data){
-              if(data.$treeNodeId > 3){
-                  console.log(data)
+          handleNodeClick(data,node){
+              //console.log(data);
+              if(node.level > 3){
                   this.$router.push({name:'generalinfo'});
+                  console.log(node);
+                  localStorage.setItem("label",JSON.stringify(data.label));
+                  
               }
           }
       }

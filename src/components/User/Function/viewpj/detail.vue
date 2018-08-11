@@ -14,6 +14,14 @@
             }
         },
 
+        mounted: function () {
+            var vm = this
+            // 用$on事件来接收参数
+            var pjNum = JSON.parse(localStorage.getItem("pjNum"));
+            
+            localStorage.removeItem("pjNum");
+        },
+
         methods: {
             test(){
 
@@ -24,12 +32,15 @@
 
 
 <style scoped>
+<<<<<<< HEAD
+=======
     .wrapper{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+>>>>>>> upstream/master
     .box10{
         width:600px;
         height:300px;
