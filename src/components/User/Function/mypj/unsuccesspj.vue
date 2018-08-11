@@ -1,5 +1,5 @@
 <template> 
-    <div>
+    <div style="top:-73px; position:relative; height:400px; margin:18px 20px;">
         <el-table
             :data="data.slice((currentPage-1)*pagesize,currentPage*pagesize)"
             border
@@ -15,12 +15,12 @@
                 width="120">
             </el-table-column>
             <el-table-column
-                prop="pjnum"
+                prop="pjNum"
                 label="项目编号"
                 width="120">
             </el-table-column>
             <el-table-column
-                prop="pjhead"
+                prop="pjHead"
                 label="项目负责人"
                 width="120">
             </el-table-column>
@@ -39,8 +39,8 @@
                 label="操作"
                 width="130">
             <template slot-scope="scope">
-                <el-button @click="editpj(scope.row.name)" type="text" size="small">编辑</el-button>
-                <el-button @click="deletepj(scope.row.name)" type="text" size="small">删除</el-button>
+                <el-button @click="editpj(row)" type="text" size="small">编辑</el-button>
+                <el-button @click="deletepj(row)" type="text" size="small">删除</el-button>
             </template>
             </el-table-column>
         </el-table>
@@ -67,11 +67,14 @@
             handleCurrentChange: function(currentPage){
                 this.currentPage = currentPage;
             },
-            editpj: function(pjname){
-                console.log(pjname)
+            editpj: function(row){
+                localStorage.setItem("pjNum",JSON.stringify(row.pjNum));
+                //掉用setp1进行编辑
+                //console.log(pjname)
             },
-            deletepj: function(pjname){
-                console.log(pjname)
+            deletepj: function(row){
+                //传值给数据库进行删除
+                //console.log(pjname)
             }
           },
 
@@ -80,8 +83,8 @@
                   data: [{
                       date: '2016-05-03',
                       name: '王小虎',
-                      pjnum: '上海',
-                      pjhead: '普陀区',
+                      pjNum: '上海',
+                      pjHead: '普陀区',
                       grade: '上海市',
                       explain: 200333
                   }],

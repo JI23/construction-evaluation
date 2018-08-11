@@ -1,20 +1,20 @@
 <template>
     <div>
-        <div class="box7" >
+        <div class="wrapper4" >
             <el-col>
               <span class="lebal">Lower Quantity</span>
-              <el-input size="mini" style="width:100%" v-model="l_quantity" placeholder="请输入内容"></el-input>
+              <el-input size="mini" style="width:100%" v-model="l_Quantity" placeholder="请输入内容"></el-input>
               <span class="lebal">Average Repair Cost for Lower Quantity of</span>
               <el-input  size="mini" style="width:100%" v-model="aver_re_l" placeholder="请输入内容"></el-input>
               <span class="lebal">Upper Quantity</span>
-              <el-input  size="mini" style="width:100%" v-model="u_quantity" placeholder="请输入内容"></el-input>
+              <el-input  size="mini" style="width:100%" v-model="u_Quantity" placeholder="请输入内容"></el-input>
               <span class="lebal">Average Repair Cost for Upper Quantity of</span>
               <el-input size="mini" style="width:100%" v-model="aver_re_u" placeholder="请输入内容"></el-input>
               <span class="lebal">COV</span>
               <el-input size="mini" style="width:100%" v-model="COV" placeholder="请输入内容"></el-input>
           </el-col>
         </div>
-        <div class="box7">
+        <div class="wrapper4">
             <el-col >
                 <span class="lebal">项目编号</span>
                     <el-select size="mini" v-model="value0" placeholder="请选择">
@@ -37,8 +37,8 @@
         data() {
             return {
                 COV: '',
-                l_quantity: '',
-                u_quantity: '',
+                l_Quantity: '',
+                u_Quantity: '',
                 aver_re_l: '',
                 aver_re_u: '',
                 options0: [{
@@ -80,8 +80,8 @@
 </script>
 
 
-<style>
-    .box7{
+<style scoped>
+    .wrapper4{
         position:relative;/*相对定位:参考物*/
         float: left;;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
         top:5px;

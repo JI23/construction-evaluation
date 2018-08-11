@@ -150,7 +150,8 @@ export default new Router({
               path:'/mypj/unsuccesspj',
               name:'unsuccesspj',
               component:unsuccesspj
-            }
+            },
+            
           ]
         },
         {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div style="height:130px" class="box8" >
+        <div style="height:130px" class="wrapper3" >
             <el-col>
                 <el-switch @change="changed" v-model="choose1" active-text="Possible Unsafe Placard Consequers" inactive-text=""></el-switch>
                 <br>
@@ -14,7 +14,7 @@
                 <span>This fraction should relate to the total quantity from all Performance group in this damage state</span>
             </el-col>
         </div>
-        <div style="height:130px" class="box8">
+        <div style="height:130px" class="wrapper3">
             <span>Potential for Non-Collapse Casualties::ality Rate in Affected Area:</span>
             <br><span>Median:</span>
             <el-input style="width:35%" size="mini" placeholder="请输入内容" v-model="input3"></el-input>
@@ -61,8 +61,8 @@
 </script>
 
 
-<style>
-  .box8{
+<style scoped>
+  .wrapper3{
     position:relative;/*相对定位:参考物*/
     float: left;;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
     top:5px;

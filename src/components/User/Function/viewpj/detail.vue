@@ -18,6 +18,14 @@
             }
         },
 
+        mounted: function () {
+            var vm = this
+            // 用$on事件来接收参数
+            var pjNum = JSON.parse(localStorage.getItem("pjNum"));
+            
+            localStorage.removeItem("pjNum");
+        },
+
         methods: {
             test(){
 
@@ -27,7 +35,7 @@
 </script>
 
 
-<style>
+<style scoped>
     .box10{
         position:relative;/*相对定位:参考物*/
         left: 20%;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/

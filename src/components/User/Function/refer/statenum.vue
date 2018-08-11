@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="box4" >
+        <div class="wrapper9" >
             <el-col>
                 <span class="lebal">项目名称</span>
                 <el-input style="width:100%" v-model="id" placeholder="请输入内容"></el-input>
@@ -12,7 +12,7 @@
                 <el-input style="width:100%" type="textarea" :rows="4" placeholder="请输入内容" v-model="textarea1"></el-input>
             </el-col>
         </div>
-        <div class="box4">
+        <div class="wrapper9">
             <!--<div class="box5">
               
             </div>
@@ -51,6 +51,16 @@
             }
         },
 
+        mounted: function () {
+            var vm = this
+            // 用$on事件来接收参数
+            var label = JSON.parse(localStorage.getItem("label"));
+            //console.log(input+'!!!!!');
+            //var tempdata = this.data[input];
+            //this.newData[input] = tempdata;
+            localStorage.removeItem("label");
+        },
+
         methods: {
             savegen(){
 
@@ -71,8 +81,8 @@
 </script>
 
 
-<style>
-  .box4{
+<style scoped>
+  .wrapper9{
     position:relative;/*相对定位:参考物*/
     float:left;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
     top:10px;
@@ -80,16 +90,6 @@
     height:350px;
     margin:18px 20px;
     
-}
-
-  .box5{
-    position:relative;/*相对定位:参考物*/
-    float:left;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
-    top:10px;
-    width: 90%;
-    height:50%;
-    margin:18px 20px;
-    background: url(../../../../assets/hometest1.jpg) center no-repeat
 }
 
 

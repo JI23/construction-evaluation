@@ -1,3 +1,4 @@
+<!-- 开始前加载项目数信息 -->
 <template>
     <div>
         <div>
@@ -32,7 +33,7 @@
   }
 </script>
 
-<style>
+<style scoped>
     .el-carousel__item:nth-child(4n) {
         background: url(../../../assets/hometest2.jpg) center no-repeat;
     }
@@ -56,7 +57,10 @@
         height:100px;
         margin:18px 20px;
         background:rgba(241,124,103,1);/*red红色 green绿色 blue蓝色0-255  a透明度0-1*/
-        text-align: center
+        text-align: center;
+        border:1px solid rgba(223, 229, 235, 0); 
+        box-shadow: 10px 10px 5px #888888;
+        border-radius:10px;
     }
 
 </style>
