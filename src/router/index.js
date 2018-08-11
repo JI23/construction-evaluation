@@ -33,7 +33,7 @@ import editinfo from "../components/User/Function/Info/editinfo.vue";
 //反馈信息
 import feedbacklist from "../components/User/Function/feed/feedbacklist.vue";
 import addfeedback from "../components/User/Function/feed/addfeedback.vue";
-
+import fbdetail from "../components/User/Function/feed/fbdetail.vue";
 //我的项目
 import successpj from "../components/User/Function/mypj/successpj.vue";
 import unsuccesspj from "../components/User/Function/mypj/unsuccesspj.vue";
@@ -246,6 +246,11 @@ export default new Router({
               path:'/feedbk/addfeedback',
               name:'addfeedback',
               component:addfeedback
+            },
+            {
+              path:'/feedbk/fbdetail',
+              name:'fbdetail',
+              component:fbdetail
             }
           ]
         },
