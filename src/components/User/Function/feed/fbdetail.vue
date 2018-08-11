@@ -1,19 +1,22 @@
 <template>
     <div>
         <div class="div1">
-            联系我们
+            这里放图片
         </div>
         <div class=div2>
             <el-col :span="4" style="color:transparent">''</el-col>
             <el-col :span="15">
-            <h3>评论反馈</h3>
-            <span class="lebal">联系方式</span>
-            <el-input v-model="yourEmail" placeholder="请输入您的邮箱"></el-input>
+            <h3>反馈详情</h3>
             <span class="lebal">标题</span>
-            <el-input v-model="fbTitle" placeholder="请输入标题"></el-input>
+            <el-input disabled="disabled" v-model="fbTitle" placeholder="标题"></el-input>
             <span class="lebal">评论内容</span>
-            <el-input type="textarea"   v-model="fbContent" placeholder="请输入您的反馈内容"></el-input>
-            <el-button type="primary" style="float:right; margin-top:50px" @click="sendfeedback">发送</el-button>
+            <el-input disabled="disabled" type="textarea"  v-model="fbContent" placeholder="反馈内容"></el-input>
+            <span class="lebal">管理员回复</span>
+            <el-input disabled="disabled" type="textarea"  v-model="admReply" placeholder="管理员回复"></el-input>
+            <br>
+            
+            <el-button  type="primary" style="float: left; margin-left:30px;margin-top:20px;" @click="remindReply">提醒回复</el-button>
+            <el-button  type="primary" style="float: right; margin-right:30px;margin-top:20px;" @click="gotoFbList">返回</el-button>
         </el-col>
         </div>
     </div>
@@ -22,14 +25,18 @@
 export default {
     data(){
         return{
-            yourEmail:'',
             fbTitle:'',
-            fbContent:''
+            fbContent:'',
+            admReply:''
         }
     },
      methods:{
-                sendfeedback(){
+                gotoFbList(){
                     this.$router.push({name:'feedbacklist'});
+                },
+                remindReply()
+                {
+
                 }
              }
 }
@@ -44,7 +51,7 @@ export default {
     }
     el-input{
         margin-top:5px;
-        width:60px;
+        width:100px;
     }
     .div1{
         height:410px;
@@ -56,8 +63,7 @@ export default {
     }
      .div2{
         width:60%;
-        float:left; 
-        
+        float:left;   
     }
 
 </style>

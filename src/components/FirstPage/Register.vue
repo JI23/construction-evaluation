@@ -9,8 +9,8 @@
             <el-form-item label="昵称" prop="nickname">
             <el-input v-model="ruleForm.nickname"></el-input>
             </el-form-item>
-            <el-form-item label="真实姓名" prop="realname">
-            <el-input v-model="ruleForm.realname"></el-input>
+            <el-form-item label="真实姓名" prop="name">
+            <el-input v-model="ruleForm.name"></el-input>
             </el-form-item>
             <el-form-item label="密码"  prop="password">
             <el-input v-model="ruleForm.password" type="password" auto-complete="off"></el-input>
@@ -18,26 +18,26 @@
             <el-form-item label="请再次输入密码"  prop="checkPass">
             <el-input v-model="ruleForm.checkPass" type="password" auto-complete="off"></el-input>
             </el-form-item>
-            <el-form-item label="邮箱" prop="youremail">
+            <el-form-item label="邮箱" prop="yourEmail">
             <el-input v-model="ruleForm.youremail"></el-input>
             </el-form-item>
-            <el-form-item label="手机号" prop="phone">
-            <el-input v-model="ruleForm.phone"></el-input>
+            <el-form-item label="手机号" prop="telephone">
+            <el-input v-model="ruleForm.telephone"></el-input>
             </el-form-item>
-            <el-form-item label="建筑师证号" prop="architectnum">
+            <el-form-item label="建筑师证号" prop="architectNum">
             <el-input v-model="ruleForm.architectnum"></el-input>
             </el-form-item>
         </el-col>
         <el-col :span="1" style="color:transparent">''</el-col>
         <el-col span="10">
             <h3>公司信息</h3>
-            <el-form-item label="公司名称" prop="comname">
+            <el-form-item label="公司名称" prop="comName">
             <el-input v-model="ruleForm.comname"></el-input>
             </el-form-item>
-            <el-form-item label="证件号" prop="comnum">
+            <el-form-item label="证件号" prop="comNum">
             <el-input v-model="ruleForm.comnum"></el-input>
             </el-form-item>
-            <el-form-item label="公司职务" prop="composition">
+            <el-form-item label="公司职务" prop="comPosition">
             <el-input v-model="ruleForm.composition"></el-input>
             </el-form-item>
             <el-form-item>
@@ -76,15 +76,15 @@
       return {
         ruleForm: {
           nickname: '',
-          realname:'',
+          name:'',
           password:'',
           checkPass:'',
-          youremail:'',
-          phone:'',
-          architectnum:'',
-          comname:'',
-          comnum:'',
-          composition:''
+          yourEmail:'',
+          telephone:'',
+          architectNum:'',
+          comName:'',
+          comNum:'',
+          comPosition:''
         },
         rules: {
           nickname: [
@@ -101,19 +101,19 @@
           checkPass: [
             { required: true, validator: validatePass2, trigger: 'blur' }
           ],
-           youremail: [
+           yourEmail: [
             { required: true, message: '请输入您的邮箱',trigger: 'blur' }
           ],
            phone: [
             { required: true, message: '请输入您的手机号', trigger: 'blur' }
           ],
-           architectnum: [
+           architectNum: [
             {   trigger: 'blur' }
           ],
-          comname: [
+          comName: [
             { required: true, message: '请输入公司名称',trigger: 'blur' }
           ],
-         comnum: [
+         comNum: [
             { required: true, message: '请输入证件号',trigger: 'blur' }
           ],
         }
@@ -121,15 +121,7 @@
     },
     methods: {
       submitForm(formName) {
-        //this.$refs[formName].validate((valid) => {
-         // if (valid) {
             this.$router.push({name:'login'})
-        //}
-        // else {
-          //  console.log('error submit!!');
-           // return false;
-         // }
-       // });
       }
     }
   }

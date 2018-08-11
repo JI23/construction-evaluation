@@ -5,11 +5,11 @@
             <span class="lebal">昵称</span>
             <el-input v-model="nickname" placeholder="已注册内容"></el-input>
             <span class="lebal">公司名称</span>
-            <el-input v-model="comname" placeholder="已注册内容"></el-input>
+            <el-input v-model="comName" placeholder="已注册内容"></el-input>
             <span class="lebal">证件号</span>
-            <el-input v-model="comnum" placeholder="已注册内容"></el-input>
+            <el-input v-model="comNum" placeholder="已注册内容"></el-input>
             <span class="lebal">公司职务</span>
-            <el-input v-model="composition" placeholder="已注册内容"></el-input>
+            <el-input v-model="comPosition" placeholder="已注册内容"></el-input>
         </el-col>
         <el-col :span="3" style="color:transparent">''</el-col> 
         <el-col :span="11">
@@ -24,11 +24,7 @@
              <br>
             <el-button type="text" >更改密码</el-button>
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <el-button type="primary" style="margin:20px;" @click="goToMyinfo">确认修改</el-button>
+            <el-button type="primary" style="margin-top:95px; " @click="goToMyinfo">确认修改</el-button>
         </el-col> 
     </div>
 </template>
@@ -41,12 +37,12 @@ export default {
             // realname:'',
             // idnumber:'',
             password:'',
-            youremail:'',
+            yourEmail:'',
             phone:'',
             //architectnum:'',
-            comname:'',
-            comnum:'',
-            composition:''
+            comName:'',
+            comNum:'',
+            comPosition:''
         }
     },
     methods:{
