@@ -33,6 +33,10 @@ export default {
         clear: both;
     }
     .main{
+        overflow: scroll;
+        position:absolute;
+        top:60px;
+        bottom: 60px;
         width:100%;
         margin-top: 5px;
     }

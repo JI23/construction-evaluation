@@ -82,7 +82,11 @@
 
 
 <style scoped>
+<<<<<<< HEAD
   .wrapper9{
+=======
+  .box4{
+>>>>>>> upstream/master
     position:relative;/*相对定位:参考物*/
     float:left;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
     top:10px;

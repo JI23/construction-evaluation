@@ -1,49 +1,46 @@
 <template>
     <div>
-
-
- 
-
-
-     <el-form  :label-position="left" label-width="90px" :model="formLabelAlign">
-         <el-row>
-             <el-col span="10">
-    <el-form-item label="昵称">
-        <el-input v-model="formLabelAlign.nickname" placeholder="已注册内容"></el-input>
-    </el-form-item>
-    <el-form-item label="真实姓名">
-        <el-input v-model="formLabelAlign.realname" placeholder="已注册内容"></el-input>
-    </el-form-item>
-    <el-form-item label="身份证号">
-        <el-input v-model="formLabelAlign.idnumber" placeholder="已注册内容"></el-input>
-    </el-form-item>
-    <el-form-item label="邮箱">
-        <el-input v-model="formLabelAlign.youremial" placeholder="已注册内容"></el-input>
-    </el-form-item>
-    <el-form-item label="手机号">
-        <el-input v-model="formLabelAlign.phone" placeholder="已注册内容"></el-input>
-    </el-form-item>
-    <el-form-item label="建筑师证号">
-        <el-input v-model="formLabelAlign.architectnum" placeholder="已注册内容"></el-input>
-    </el-form-item>
-    </el-col>
-     <el-col :span="1" style="color:transparent">''</el-col>
-    <el-col span="10">
-        <el-form-item label="公司名称">
-        <el-input v-model="formLabelAlign.comname" placeholder="已注册内容"></el-input>
-    </el-form-item>
-    <el-form-item label="证件号">
-        <el-input v-model="formLabelAlign.comnum" placeholder="已注册内容"></el-input>
-    </el-form-item>
-    <el-form-item label="公司职务">
-        <el-input v-model="formLabelAlign.composition" placeholder="已注册内容"></el-input>
-    </el-form-item>
-    <br>
-    <br>
-    <br>
-    <el-button type="primary" style="margin:20px;" @click="goToEdit">编辑</el-button>
-    </el-col>
-   </el-row>
+    <el-form  label-position="left" label-width="90px" :model="formLabelAlign">
+        <el-row>
+            <el-col :span="10">
+                <el-form-item label="昵称">
+                <el-input v-model="formLabelAlign.nickname" placeholder="已注册内容"></el-input>
+                </el-form-item>
+                <el-form-item label="真实姓名">
+                <el-input v-model="formLabelAlign.realname" placeholder="已注册内容"></el-input>
+                </el-form-item>
+                <el-form-item label="身份证号">
+                <el-input v-model="formLabelAlign.idnumber" placeholder="已注册内容"></el-input>
+                </el-form-item>
+                <el-form-item label="邮箱">
+                <el-input v-model="formLabelAlign.youremial" placeholder="已注册内容"></el-input>
+                </el-form-item>
+                <el-form-item label="手机号">
+                <el-input v-model="formLabelAlign.phone" placeholder="已注册内容"></el-input>
+                </el-form-item>
+                <el-form-item label="建筑师证号">
+                <el-input v-model="formLabelAlign.architectnum" placeholder="已注册内容"></el-input>
+                </el-form-item>
+                </el-col>
+            <el-col :span="1" style="color:transparent">''</el-col>
+            <el-col :span="10">
+                <el-form-item label="公司名称">
+                <el-input v-model="formLabelAlign.comname" placeholder="已注册内容"></el-input>
+                </el-form-item>
+                <el-form-item label="证件号">
+                <el-input v-model="formLabelAlign.comnum" placeholder="已注册内容"></el-input>
+                </el-form-item>
+                <el-form-item label="公司职务">
+                <el-input v-model="formLabelAlign.composition" placeholder="已注册内容"></el-input>
+                </el-form-item>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <el-button type="primary" style="margin:20px;" @click="goToEdit">编辑</el-button>
+            </el-col>
+        </el-row>
     </el-form> 
 
 
@@ -82,24 +79,31 @@
 export default {
     data(){
         return{
-              formLabelAlign: {
-          nickname: '',
-          realname:'',
-          youremail:'',
-          phone:'',
-          architectnum:'',
-          comname:'',
-          comnum:'',
-          composition:''
-        }
-        }
-    },
+                formLabelAlign: {
+                nickname: '',
+                realname:'',
+                youremail:'',
+                phone:'',
+                architectnum:'',
+                comname:'',
+                comnum:'',
+                composition:''
+                }
+             }
+        },
     methods:{
             goToEdit()
             {
+                this.$prompt('请输入您的密码', '安全提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消'
+                }).then(({ value }) => {
                 this.$router.push({name:'editinfo'});
+                });
+
+                //this.$router.push({name:'editinfo'});
             }
-    }
+            }
 }
 </script>
 
@@ -114,6 +118,5 @@ export default {
         margin-top:5px;
         width:40px;
     }
-
 </style>
    
