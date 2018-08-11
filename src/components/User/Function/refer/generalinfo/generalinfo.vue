@@ -17,9 +17,9 @@
                         :value="item.value"><!--data未设置 -->
                     </el-option>
                 </el-select>
-                <el-row style="float: right; top: -30px; left:18px">
-                    <el-button circle size="small" @click="editReq">编辑</el-button><!--弹窗 未实现 -->
-                    <el-button circle size="small" @click="dialogFormVisible = true">添加</el-button>
+                <el-row style="float: right; top: -27px; left:45px">
+                    <el-button size="mini" @click="editReq">编辑</el-button><!--弹窗 未实现 -->
+                    <el-button size="mini" @click="dialogFormVisible = true">添加</el-button>
                     <el-dialog title="要求系数" :visible.sync="dialogFormVisible">
                         <el-form :model="form">
                             <el-form-item label="type name" :label-width="formLabelWidth">
@@ -181,6 +181,7 @@
         margin:18px 20px;
       
     }
+
 
     .lebal{
         position:relative;

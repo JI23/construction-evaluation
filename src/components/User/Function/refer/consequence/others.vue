@@ -31,6 +31,7 @@
         <div style="height:40px" class="box8">
             <el-switch v-model="choose2" active-text="Use Long Lead Time Flag" inactive-text=""></el-switch>
         </div>
+        <el-button style="display:block;margin:0 auto; position:relative; top: 15px" @click="save_next">保存</el-button>
     </div>
 </template>
 
@@ -53,9 +54,27 @@
 
         methods:{
             changed(){
-              console.log('1')
+              //console.log('1')
               this.temp = !this.temp 
             },
+
+            save_next(){
+                var others = {
+                    choose1: this.choose1, 
+                    input1: this.input1,
+                    input2: this.input2,
+                    input3: this.input3,
+                    input4: this.input4,
+                    input5: this.input5,
+                    input7: this.input7,
+                    input8: this.input8,
+                    choose2: this.choose2,
+                };
+                localStorage.setItem("others",JSON.stringify(others));
+                //this.$router.push({name:'re_time'});
+                //提交数据，成功则弹窗提示，不跳转页面
+            },
+
         }
   }
 </script>

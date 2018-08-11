@@ -56,7 +56,7 @@
         },
 
         methods: {
-            handleNodeClick(data) {
+            handleNodeClick(data,node) {
                 console.log(data.$treeNodeId);
                 if(data.label === 'General Info'){
                     this.$router.push({name:'general_info'});
@@ -70,8 +70,9 @@
                     localStorage.setItem("label",JSON.stringify(data.label));
                 }
                 else if(data.label === 'Add Damage State'){
-                    this.data[0].children[0].children[2] = Object.assign({},this.data[0].children[0].children[0]);
-                    this.data[0].children[0].children[2].label = 'hhh';
+                    var temp = this.data[0].children[0].children.length+1;
+                    this.data[0].children[0].children[temp-1] = Object.assign({},this.data[0].children[0].children[0]);
+                    this.data[0].children[0].children[temp-1].label = 'Damage Step'+temp;
                     this.data = JSON.parse(JSON.stringify(this.data));
                     //console.log(this.data[0].children[0].children[2]);
                     //console.log(this.data[0].children[0].children);

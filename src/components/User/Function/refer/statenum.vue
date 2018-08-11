@@ -3,13 +3,13 @@
         <div class="wrapper9" >
             <el-col>
                 <span class="lebal">项目名称</span>
-                <el-input style="width:100%" v-model="id" placeholder="请输入内容"></el-input>
-                <span class="lebal">项目编号</span>
-                <el-input  style="width:100%" v-model="name1" placeholder="请输入内容"></el-input>
-                <span class="lebal">项目编号</span>
-                <el-input  style="width:100%" v-model="name2" placeholder="请输入内容"></el-input>
-                <span class="lebal">客户名称</span>
-                <el-input style="width:100%" type="textarea" :rows="4" placeholder="请输入内容" v-model="textarea1"></el-input>
+                <el-input style="width:100%" v-model="name" placeholder="请输入内容"></el-input>
+                <span class="lebal">median</span>
+                <el-input  style="width:100%" v-model="median" placeholder="请输入内容"></el-input>
+                <span class="lebal">dispersion</span>
+                <el-input  style="width:100%" v-model="dispersion" placeholder="请输入内容"></el-input>
+                <span class="lebal">description</span>
+                <el-input style="width:100%" type="textarea" :rows="4" placeholder="请输入内容" v-model="description"></el-input>
             </el-col>
         </div>
         <div class="wrapper9">
@@ -43,10 +43,10 @@
                 fileList2: [],
                 data: [{
                 }],
-                id: '',
-                name1: '',
-                name2: '',
-                textarea1: '',
+                description: '',
+                name: '',
+                median: '',
+                dispersion: '',
                 temp: '0',
             }
         },
@@ -63,7 +63,13 @@
 
         methods: {
             savegen(){
-
+                var statenum_info = {
+                    name: this.name, 
+                    median: this.median, 
+                    dispersion: this.dispersion,
+                    description: this.description,
+                };
+                localStorage.setItem("statenum_info",JSON.stringify(statenum_info));
             },
             handleRemove(file, fileList) {
                 console.log(file, fileList);
@@ -82,11 +88,7 @@
 
 
 <style scoped>
-<<<<<<< HEAD
   .wrapper9{
-=======
-  .box4{
->>>>>>> upstream/master
     position:relative;/*相对定位:参考物*/
     float:left;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
     top:10px;

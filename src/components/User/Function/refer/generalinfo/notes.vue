@@ -104,6 +104,7 @@
                 };
                 localStorage.setItem("notes_info",JSON.stringify(notes_info));
                 //提交给后台若成功则弹窗提示并跳转至下一部分
+                //记得删除localStorage内容
             },
         }
     }

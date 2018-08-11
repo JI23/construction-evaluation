@@ -27,6 +27,7 @@
                     </el-select>
             </el-col>
             <schart class="wrapper" :canvasId="canvasId" :type="type" :data="data" :options="options"></schart>
+            <el-button style="display:block;margin:0 auto; position:relative; top: 15px" @click="save_next">下一步</el-button>
         </div>
     </div>
 </template>
@@ -72,6 +73,18 @@
             }
         },
 
+        methods: {
+            save_next(){
+                var re_cost = {
+                    l_Quantity: this.l_Quantity, 
+                    aver_re_l: this.aver_re_l,
+                    u_Quantity: this.u_Quantity,
+                    aver_re_u: this.aver_re_u,
+                };
+                localStorage.setItem("re_cost",JSON.stringify(re_cost));
+                this.$router.push({name:'re_time'});
+            },
+        },
 
         components:{
           Schart
