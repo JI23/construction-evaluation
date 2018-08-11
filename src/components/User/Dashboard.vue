@@ -6,7 +6,7 @@
                 <user-nav style="height:100%"></user-nav>
             </el-col>
             <el-col :span="20">
-            <el-card class="card">
+            <el-card class="card clearfix">
                 <router-view></router-view>
             </el-card>  
             </el-col>

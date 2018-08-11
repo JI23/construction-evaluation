@@ -8,17 +8,17 @@
             </el-carousel>
         </div>
         <br><br>
-        <div class="box2" style= "background:rgba(213,153,168,1)">
+        <div class="box2" style= "background:#67C23A">
             <h4>已完成项目</h4>
-            <p>hhh</p>
+            <p>10</p>
         </div>
         <div class="box2" style= "background:rgba(233,240,29,1)">
             <h4>未完成项目</h4>
-            <p>hhh</p>
+            <p>1</p>
         </div>
         <div class="box2">
             <h4>项目总数</h4>
-            <p>hhh</p>
+            <p>11</p>
         </div>
     </div>
 </template>
@@ -58,9 +58,9 @@
         margin:18px 20px;
         background:rgba(241,124,103,1);/*red红色 green绿色 blue蓝色0-255  a透明度0-1*/
         text-align: center;
-        border:1px solid rgba(223, 229, 235, 0); 
-        box-shadow: 10px 10px 5px #888888;
-        border-radius:10px;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+        border-radius:2px;
+        color:#666;
     }
 
 </style>

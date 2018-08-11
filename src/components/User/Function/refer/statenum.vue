@@ -13,13 +13,6 @@
             </el-col>
         </div>
         <div class="wrapper9">
-            <!--<div class="box5">
-              
-            </div>
-            <el-col >
-              <el-button  style="position:relative; left:30px" @click="savegen">添加图片</el-button>
-              <el-button  style="position:relative; left:50px" @click="savegen">删除图片</el-button><br><br><br>
-            </el-col>-->
             <el-upload
                 class="upload-demo"
                 action="https://jsonplaceholder.typicode.com/posts/"
@@ -82,18 +75,13 @@
 
 
 <style scoped>
-<<<<<<< HEAD
   .wrapper9{
-=======
-  .box4{
->>>>>>> upstream/master
     position:relative;/*相对定位:参考物*/
     float:left;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
     top:10px;
     width:43%;
     height:350px;
     margin:18px 20px;
-    
 }
 
 

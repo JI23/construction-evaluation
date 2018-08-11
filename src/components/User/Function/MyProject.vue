@@ -7,7 +7,7 @@
                     <el-tab-pane label="已完成项目" name="success"></el-tab-pane>
                     <el-tab-pane label="未完成项目" name="unsuccess"></el-tab-pane>
                 </el-tabs>
-                <el-button style="float: right; top:-60px; position:relative;" type="info" round @click="search">搜索</el-button>
+                <el-button style="float: right; top:-60px; position:relative;" @click="search">搜索</el-button>
                 <el-input @keyup.enter="search()" style="width:150px ; float: right; top:-60px;left:-10px" placeholder="请输入内容" prefix-icon="el-icon-search" v-model="input"></el-input>
             </el-form>    
         </el-row><!--enter有问题-->
@@ -21,7 +21,7 @@
         data() {
             return {
                 input: '',
-                activeName: 'notes',
+                activeName: 'success',
                 isRouteAlive: true
             }
         },

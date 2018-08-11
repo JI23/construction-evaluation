@@ -1,7 +1,7 @@
 <template> 
   <div style="height:390px">
     <el-table  style="height: 240px; margin-bottom:20px"
-      :data="tableData" border height="250">
+      :data="tableData" border max-height="350">
       <el-table-column
         fixed
         prop="fbDate"

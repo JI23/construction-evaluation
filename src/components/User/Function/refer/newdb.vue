@@ -1,11 +1,11 @@
 <template>
-    <div class="box" style="width:950px; height:450px;">
-        <div class="box" style="width:25%; border:1px solid #DFE5EB; box-shadow: 10px 10px 5px #888888;">
+    <div class="box">
+        <el-card style="width:30%;">
             <el-tree  :expand-on-click-node="false" :default-expand-all="true" :data="data"  @node-click="handleNodeClick" ></el-tree>
-        </div>   
-        <div class="box" style="width:65%; border:1px solid #DFE5EB; box-shadow: 10px 10px 5px #888888;">
+        </el-card>
+        <el-card style="width:68%;">
             <router-view></router-view>
-        </div> 
+        </el-card>
     </div>
 </template>
 
@@ -88,12 +88,17 @@
 
 <style scoped>
     .box{
-        border-radius:10px;
-        position:relative;/*相对定位:参考物*/
-        top:-10px;
-        float:left;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
-        height:450px;
-        margin:18px 20px;
+        height: 530px;
+        width:100%;
+    }
+    .clearfix:after{
+        display:block;
+        content:'';
+        clear:both;
+    }
+    .el-card{
+        display: inline-block;
+        height: 500px;
     }
 
 </style>

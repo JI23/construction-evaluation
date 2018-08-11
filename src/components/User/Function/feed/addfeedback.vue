@@ -3,7 +3,7 @@
         <div class="div1">
             联系我们
         </div>
-        <div class=div2>
+        <div class='div2'>
             <el-col :span="4" style="color:transparent">''</el-col>
             <el-col :span="15">
             <h3>评论反馈</h3>
