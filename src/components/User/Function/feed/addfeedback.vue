@@ -3,19 +3,17 @@
         <div class="div1">
             联系我们
         </div>
-        <div class=div2>
-            <el-col :span="2" style="color:transparent">''</el-col>
+        <div class='div2'>
+            <el-col :span="4" style="color:transparent">''</el-col>
             <el-col :span="15">
             <h3>评论反馈</h3>
             <span class="lebal">联系方式</span>
-            <el-input v-model="youremail" placeholder="请输入您的邮箱"></el-input>
+            <el-input v-model="yourEmail" placeholder="请输入您的邮箱"></el-input>
             <span class="lebal">标题</span>
-            <el-input v-model="fbtitle" placeholder="请输入标题"></el-input>
+            <el-input v-model="fbTitle" placeholder="请输入标题"></el-input>
             <span class="lebal">评论内容</span>
-            <el-input type="textarea"  v-model="fbcontent" placeholder="请输入您的反馈内容"></el-input>
-            <br>
-            <br>
-            <el-button type="primary" style="margin:20px;" @click="sendfeedback">发送</el-button>
+            <el-input type="textarea"   v-model="fbContent" placeholder="请输入您的反馈内容"></el-input>
+            <el-button type="primary" style="float:right; margin-top:50px" @click="sendfeedback">发送</el-button>
         </el-col>
         </div>
     </div>
@@ -24,9 +22,9 @@
 export default {
     data(){
         return{
-            youremail:'',
-            fbtitle:'',
-            fbcontent:''
+            yourEmail:'',
+            fbTitle:'',
+            fbContent:''
         }
     },
      methods:{
@@ -49,7 +47,7 @@ export default {
         width:60px;
     }
     .div1{
-        height:400px;
+        height:410px;
         width:40%;
         float:left; 
         background-color:#F2F2F2;

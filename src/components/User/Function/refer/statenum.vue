@@ -13,13 +13,6 @@
             </el-col>
         </div>
         <div class="wrapper9">
-            <!--<div class="box5">
-              
-            </div>
-            <el-col >
-              <el-button  style="position:relative; left:30px" @click="savegen">添加图片</el-button>
-              <el-button  style="position:relative; left:50px" @click="savegen">删除图片</el-button><br><br><br>
-            </el-col>-->
             <el-upload
                 class="upload-demo"
                 action="https://jsonplaceholder.typicode.com/posts/"
@@ -95,7 +88,6 @@
     width:43%;
     height:350px;
     margin:18px 20px;
-    
 }
 
 

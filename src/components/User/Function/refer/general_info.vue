@@ -12,7 +12,7 @@
     export default {
         data() {
             return {
-                activeName: 'generalInfo'
+                activeName: 'generalinfo'
             }
         },
 
