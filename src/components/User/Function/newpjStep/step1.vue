@@ -1,6 +1,11 @@
 <template>
     <div>
-        <el-col :span="10">
+        <el-row>
+            <el-button size="small" class='btn' @click="next">下一步</el-button>
+            <el-button size="small" class='btn' @click="back">上一步</el-button>
+        </el-row>
+        <el-row>
+            <el-col :span="10">
             <h3>基本信息</h3>
             <span class="lebal">项目名称</span>
             <el-input v-model="pjname" placeholder="请输入内容"></el-input>
@@ -21,6 +26,7 @@
                 v-model="textarea">
             </el-input>
         </el-col>
+        </el-row> 
     </div>
 </template>
 <script>
@@ -33,6 +39,15 @@ export default {
             principal:'',
             textarea:''
         }
+    },
+    methods:{
+        next(){
+            this.$emit('next','');
+        },
+        back(){
+            this.$emit('back','');
+        }
+        
     }
 }
 </script>
@@ -46,6 +61,9 @@ export default {
     el-input{
         margin-top:5px;
         width:40px;
+    }
+    .btn{
+        margin-top:12px;
     }
 
 </style>

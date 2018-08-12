@@ -1,30 +1,5 @@
 <template>
     <div>
-<<<<<<< HEAD
-        <div style="width:950px; height:450px;">
-            <div class="wrapper1" >
-                <el-col>
-                    <h2>基本信息</h2>
-                    <span class="lebal">项目名称</span>
-                    <el-input :disabled="true" size="mini" style="width:100%" v-model="pjName" placeholder="请输入内容"></el-input>
-                    <span class="lebal">项目编号</span>
-                    <el-input :disabled="true" size="mini" style="width:100%" v-model="pjNum" placeholder="请输入内容"></el-input>
-                    <span class="lebal">客户名称</span>
-                    <el-input :disabled="true" size="mini" style="width:100%" v-model="customer" placeholder="请输入内容"></el-input>
-                    <span class="lebal">项目负责人</span>
-                    <el-input :disabled="true" size="mini" style="width:100%" v-model="per" placeholder="请输入内容"></el-input>
-                    <span class="lebal">创建时间</span>
-                    <el-input :disabled="true" size="mini" style="width:100%" v-model="time" placeholder="请输入内容"></el-input><br><br>
-                    <el-button style="display:block;margin:0 auto" @click="detail" type="success">查看认证信息</el-button>
-                </el-col>
-            </div>
-            <div class="wrapper1">
-                <h2>证书信息</h2>
-                <div class="picture">
-                </div>
-                <h2>项目说明</h2>
-                <el-input :disabled="true" style="width:100%" type="textarea" :rows="4" placeholder="请输入内容" v-model="textarea1"></el-input>
-=======
         <div class="box7" >
             <el-col>
                 <h2>基本信息</h2>
@@ -44,7 +19,6 @@
         <div class="box7">
             <h2>证书信息</h2>
             <div class="box10">     
->>>>>>> upstream/master
             </div>
         </div>
     </div>
@@ -83,11 +57,7 @@
 
 
 <style scoped>
-<<<<<<< HEAD
-    .wrapper1{
-=======
     .box7{
->>>>>>> upstream/master
         position:relative;/*相对定位:参考物*/
         float: left;;/*浮动:左浮动 与父元素的左端对齐 依次的往右端显示 一行显示不下就换行接着依次显示*/
         width:45%;
