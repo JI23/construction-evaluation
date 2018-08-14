@@ -8,9 +8,7 @@
             <el-step title="地震信息"></el-step>
             <el-step title="结构响应"></el-step>
         </el-steps>
-        <el-button size="small" style="margin-top: 12px;" @click="next">下一步</el-button>
-        <el-button size="small" style="margin-top: 12px;" @click="back">上一步</el-button>
-        <router-view class="input clearfix"></router-view>
+        <router-view class="input clearfix"  @next="next" @back="back"></router-view>
     </div>
 </template>
     
@@ -35,7 +33,7 @@
           if(this.active-- == 0) this.active = 0;
           this.activeRouter = 'step' + (this.active + 1)
             this.$router.push({name:this.activeRouter})
-      }
+      },
     }
   }
 </script>

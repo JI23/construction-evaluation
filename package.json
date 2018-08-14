@@ -16,9 +16,11 @@
     "element-ui": "^2.4.5",
     "highcharts": "^6.1.1",
     "kiko-rascalhao": "^1.0.0",
+    "store": "^2.0.12",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vue-schart": "^1.0.0"
+    "vue-schart": "^1.0.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
+import store from "../node_modules/store/dist/store.legacy.min";
 import '../theme/index.css'
 import 'normalize.css'
 Vue.config.productionTip = false
 
+Vue.use(store);
 Vue.use(ElementUI);
 
 /* eslint-disable no-new */

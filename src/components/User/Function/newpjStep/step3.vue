@@ -1,9 +1,13 @@
 <template>
     <div>
-        <el-table :data="tableData" border style="width:100%" max-height="300">
+        <el-row>
+            <el-button size="small" class='btn' @click="next">下一步</el-button>
+            <el-button size="small" class='btn' @click="back">上一步</el-button>
+        </el-row>
+        <el-table :data="tableData" border style="width:100%" max-height="350">
         <el-table-column prop="order1" label="易损性编号" width="180">
             <template slot-scope="scope">
-                <el-input v-model="scope.row.id" placeholder="点击可选" @focus="dialogVisible = true"></el-input>
+                <el-input v-model="scope.row.id" placeholder="点击可选" @focus="chooseId(scope.$index, tableData)"></el-input>
             </template>
         </el-table-column>
         <el-table-column prop="order2" label="起始楼层">
@@ -53,6 +57,7 @@
         width="30%"
         :before-close="handleClose">
         <span>这是一段信息</span>
+        <el-tree :default-expand-all="true" :data="data"  @node-click="handleNodeClick" ></el-tree>
         <span slot="footer" class="dialog-footer">
             <el-button @click="dialogVisible = false">取 消</el-button>
             <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
@@ -67,6 +72,7 @@
     export default {
       data() {
           return{
+            index: null,
             dialogVisible:false,
             tableData: [{
                 id: '',
@@ -75,10 +81,26 @@
                 X:null,
                 Y:null,
                 Non:null
-            }]
+            }],
+            data: [{
+                    label: 'General Info',
+                    children: [{
+                        label: 'Damage State Type',
+                        children: [{
+                            label: 'Damage State 1',
+                            children: [{
+                                label: 'A1101 Consequence Functions'
+                            }]
+                        }]
+                    }],
+                  }]
         };
     },
     methods: {
+        chooseId(index, rows){
+            this.dialogVisible = true;
+            this.index = index;
+        },
         deleteRow(index, rows) {
             rows.splice(index, 1);
         },
@@ -89,7 +111,7 @@
             })
             .catch(_ => {});
         },
-            newComponent(){
+        newComponent(){
             this.tableData.push({
                 id:'',
                 start_floor: '',
@@ -99,6 +121,20 @@
                 Non:null
             })
         },
+         handleNodeClick(data,node){
+              //console.log(data);
+              if(node.level > 3){
+                  console.log(data)
+                  this.tableData[this.index].id = data.label.substr(0,5);
+                  this.dialogVisible = false;   
+              }
+          },
+          next(){
+            this.$emit('next','');
+        },
+        back(){
+            this.$emit('back','');
+        }
     },
            
 }
@@ -107,14 +143,10 @@
 
 
 <style scoped>
-.cell-edit-input .el-input, .el-input__inner {
-  width:100px;
-}
-.cell-icon{
-  cursor:pointer;
-  color:#fff;
-}
 .el-table{
     margin:20px 0;
 }
+.btn{
+        margin-top:12px;
+    }
 </style>
