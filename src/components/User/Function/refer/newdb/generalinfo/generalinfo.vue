@@ -2,14 +2,14 @@
     <div>
         <div class="wrapper6" >
             <el-col>
-                <span class="lebal">项目名称</span>
-                <el-input style="width:100%" v-model="name" placeholder="请输入内容"></el-input>
-                <span class="lebal">项目编号</span>
-                <el-input  style="width:100%" v-model="id" placeholder="请输入内容"></el-input>
-                <span class="lebal">客户名称</span>
-                <el-input style="width:100%" type="textarea" :rows="4" placeholder="请输入内容" v-model="cus_name"></el-input>
+                <span class="lebal">ID</span>
+                <el-input style="width:100%" v-model="id" placeholder="请输入内容"></el-input>
+                <span class="lebal">Name</span>
+                <el-input  style="width:100%" v-model="name" placeholder="请输入内容"></el-input>
+                <span class="lebal">Description</span>
+                <el-input style="width:100%" type="textarea" :rows="4" placeholder="请输入内容" v-model="description"></el-input>
                 <span class="lebal">要求系数</span><br>
-                <el-select size="mini" v-model="req_coe" placeholder="请选择">
+                <el-select size="mini" v-model="demand_Para" placeholder="请选择">
                     <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -23,20 +23,18 @@
                     <el-dialog title="要求系数" :visible.sync="dialogFormVisible">
                         <el-form :model="form">
                             <el-form-item label="type name" :label-width="formLabelWidth">
-                                <el-input v-model="typename" auto-complete="off"></el-input>
+                                <el-input v-model="typename" placeholder="请输入内容"></el-input>
                             </el-form-item>
-                            <el-form-item label="default units" :label-width="formLabelWidth">
-                                <el-select v-model="units1" placeholder="请选择活动区域">
-                                    <el-option label="区域一" value="shanghai"></el-option>
-                                    <el-option label="区域二" value="beijing"></el-option>
-                                </el-select>
-                                <el-select v-model="units2" placeholder="请选择活动区域">
-                                    <el-option label="区域一" value="shanghai"></el-option>
-                                    <el-option label="区域二" value="beijing"></el-option>
-                                </el-select>
-                            </el-form-item>
+                            <span style="position:relative; left:20px;">default units</span>
+                            <el-cascader
+                                :options="edit_options"
+                                change-on-select
+                                v-model="units" 
+                                placeholder="请选择"
+                                style="position:relative; left:30px;"
+                            ></el-cascader><br><br>
                             <el-form-item label="DP Dimension" :label-width="formLabelWidth">
-                                <el-select v-model="DP_Demision" placeholder="请选择活动区域">
+                                <el-select v-model="DP_Demision" placeholder="请选择">
                                     <el-option label="区域一" value="shanghai"></el-option>
                                     <el-option label="区域二" value="beijing"></el-option>
                                 </el-select>
@@ -55,11 +53,11 @@
                 <el-switch style="position:relative;" v-model="value1" active-text="use demand value from floor" inactive-text=" ">></el-switch><br><br>
                 <el-switch style="position:relative;" v-model="value2" active-text="use supplied data needed" inactive-text=" ">></el-switch><br><br>
                 <span class="lebal">Directional</span><br>
-                <el-radio v-model="choose1" label="1">备选项</el-radio>
-                <el-radio v-model="choose1" label="2">备选项</el-radio><br>
+                <el-radio v-model="choose1" label="1">Directional</el-radio>
+                <el-radio v-model="choose1" label="2">Non-Directional</el-radio><br>
                 <span class="lebal">Correlation</span><br>
-                <el-radio v-model="choose2" label="1">备选项</el-radio>
-                <el-radio v-model="choose2" label="2">备选项</el-radio><br><br><br>
+                <el-radio v-model="choose2" label="1">Correlated</el-radio>
+                <el-radio v-model="choose2" label="2">Not Correlated</el-radio><br><br><br>
                 <el-button style="display:block;margin:0 auto" @click="savegen">下一步</el-button>
             </el-col>
         </div>
@@ -84,17 +82,12 @@
                 },
                 typename: '',
                 DP_Demision: '',
-                units1: '',
-                units2: '',
+                units: '',
                 formLabelWidth: '120px',
                 value2: false,
                 value1: false,
                 choose1: '1',
                 choose2: '1',
-                id:"",
-                name:"",
-                describe:"",
-                cus_name:"",
                 options: [{
                     value: '选项1',
                     label: 'DB_Common'
@@ -114,8 +107,97 @@
                     value: '选项6',
                     label: 'DB_FEMA'
                 }],
-                req_coe:'',
-                val1: '11'
+                id:"",
+                name:"",
+                demand_Para:'',
+                description: '',
+                edit_options: [{
+                    value: 'each',
+                    label: 'Each',
+                    children: [{
+                        value: 'each',
+                        label: 'Each',
+                    }]
+                    }, {
+                    value: 'length',
+                    label: 'Length',
+                    children: [{
+                        value: 'mil',
+                        label: 'Mil',
+                    }, {
+                        value: 'inch',
+                        label: 'Inch',
+                    }, {
+                        value: 'foot',
+                        label: 'Foot',
+                    }, {
+                        value: 'yard',
+                        label: 'Yard',
+                    }, {
+                        value: 'mile',
+                        label: 'Mile',
+                    }, {
+                        value: 'nautical_mile',
+                        label: 'Nautical_mile',
+                    },{
+                        value: 'micron',
+                        label: 'Micron',
+                    }, {
+                        value: 'milliMeter',
+                        label: 'Millimeter',
+                    }, {
+                        value: 'centiMeter',
+                        label: 'Centimeter',
+                    }, {
+                        value: 'meter',
+                        label: 'Meter',
+                    },{
+                        value: 'kilometer',
+                        label: 'Kilometer',
+                    }, {
+                        value: 'furlong',
+                        label: 'FurLong',
+                    }, {
+                        value: 'rod',
+                        label: 'Rod',
+                    }, {
+                        value: 'light_year',
+                        label: 'LightYear',
+                    }]
+                }, {
+                    value: 'area',
+                    label: 'Area',
+                }, {
+                    value: 'acceleration',
+                    label: 'Acceleration',
+                }, {
+                    value: 'volume',
+                    label: 'Volume',
+                }, {
+                    value: 'dryVolume',
+                    label: 'DryVolume',
+                }, {
+                    value: 'mass',
+                    label: 'Mass',
+                }, {
+                    value: 'energy',
+                    label: 'Energy',
+                }, {
+                    value: 'force',
+                    label: 'Force',
+                }, {
+                    value: 'velocity',
+                    label: 'Velocity',
+                }, {
+                    value: 'angle',
+                    label: 'Angle',
+                }, {
+                    value: 'smallTime',
+                    label: 'SmallTime',
+                }, {
+                    value: 'largeTime',
+                    label: 'LargeTime',
+                }]
             }
         },
 
@@ -127,7 +209,7 @@
             //var tempdata = this.data[input];
             //this.newData[input] = tempdata;
             localStorage.removeItem("label");
-    },
+        },
 
 
         methods: {

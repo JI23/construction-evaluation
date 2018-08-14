@@ -32,6 +32,7 @@
                 label: 'Add Damage State'
             }];
             return {
+                contentHasSave: false,//用于判断是否有修改
                 data: [{  
                     label: 'General Info',
                     children: [{
@@ -82,6 +83,25 @@
                     localStorage.setItem("label",JSON.stringify(data.label));
                 }
             }
+        },
+
+        beforeRouteLeave: function(to, from , next){
+            //判断是否保存 即是否有修改
+            //console.log(to.name);
+            //console.log(from.name);
+            //console.log(next);
+            
+            next(false)
+            this.$confirm('您还未保存简介，确定需要提出吗?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                // 选择确定
+                next()
+            })
+            
+            
         }
   }
 </script>

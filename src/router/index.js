@@ -44,20 +44,20 @@ import detail from "../components/User/Function/viewpj/detail.vue";
 
 //易损性数据库
 import viewdb from "../components/User/Function/refer/viewdb.vue";
-import newdb from "../components/User/Function/refer/newdb.vue";
+import newdb from "../components/User/Function/refer/newdb/newdb.vue";
 //新建易损性数据库
-import general_info from "../components/User/Function/refer/general_info";
-import statenum from "../components/User/Function/refer/statenum";
-import consequence from "../components/User/Function/refer/consequence";
-import damage_state from "../components/User/Function/refer/damage_state";
+import general_info from "../components/User/Function/refer/newdb/general_info";
+import statenum from "../components/User/Function/refer/newdb/statenum";
+import consequence from "../components/User/Function/refer/newdb/consequence";
+import damage_state from "../components/User/Function/refer/newdb/damage_state";
 //generalinfo部分
-import generalinfo from "../components/User/Function/refer/generalinfo/generalinfo";
-import notes from "../components/User/Function/refer/generalinfo/notes";
+import generalinfo from "../components/User/Function/refer/newdb/generalinfo/generalinfo";
+import notes from "../components/User/Function/refer/newdb/generalinfo/notes";
 //consequence部分
-import gen_info from "../components/User/Function/refer/consequence/gen_info";
-import others from "../components/User/Function/refer/consequence/others.vue";
-import re_cost from "../components/User/Function/refer/consequence/re_cost";
-import re_time from "../components/User/Function/refer/consequence/re_time";
+import gen_info from "../components/User/Function/refer/newdb/consequence/gen_info";
+import others from "../components/User/Function/refer/newdb/consequence/others.vue";
+import re_cost from "../components/User/Function/refer/newdb/consequence/re_cost";
+import re_time from "../components/User/Function/refer/newdb/consequence/re_time";
 
 Vue.use(Router)
 
@@ -166,64 +166,64 @@ export default new Router({
               component:viewdb
             },
             {
-              path:'/refer/newdb',
+              path:'/refer/newdb/newdb',
               name:'newdb',
               component:newdb,
-              redirect: '/refer/general_info',
+              redirect: '/refer/newdb/general_info',
               children:[
                 {
-                  path:'/refer/consequence',
+                  path:'/refer/newdb/consequence',
                   name:'consequence',
                   component:consequence,
-                  redirect:'/refer/consequence/gen_info',
+                  redirect:'/refer/newdb/consequence/gen_info',
                   children:[
                     {
-                      path:'/refer/consequence/gen_info',
+                      path:'/refer/newdb/consequence/gen_info',
                       name:'gen_info',
                       component:gen_info
                     },
                     {
-                      path:'/refer/consequence/others',
+                      path:'/refer/newdb/consequence/others',
                       name:'others',
                       component:others
                     },
                     {
-                      path:'/refer/consequence/re_cost',
+                      path:'/refer/newdb/consequence/re_cost',
                       name:'re_cost',
                       component:re_cost
                     },
                     {
-                      path:'/refer/consequence/re_time',
+                      path:'/refer/newdb/consequence/re_time',
                       name:'re_time',
                       component:re_time
                     }
                   ]
                 },
                 {
-                  path:'/refer/general_info',
+                  path:'/refer/newdb/general_info',
                   name:'general_info',
                   component:general_info,
-                  redirect:'/refer/generalinfo/generalinfo',
+                  redirect:'/refer/newdb/generalinfo/generalinfo',
                   children:[
                     {
-                      path:'/refer/generalinfo/generalinfo',
+                      path:'/refer/newdb/generalinfo/generalinfo',
                       name:'generalinfo',
                       component:generalinfo
                     },
                     {
-                      path:'/refer/generalinfo/notes',
+                      path:'/refer/newdb/generalinfo/notes',
                       name:'notes',
                       component:notes
                     }
                   ]
                 },
                 {
-                  path:'/refer/damage_state',
+                  path:'/refer/newdb/damage_state',
                   name:'damage_state',
                   component:damage_state
                 },
                 {
-                  path:'/refer/statenum',
+                  path:'/refer/newdb/statenum',
                   name:'statenum',
                   component:statenum
                 }

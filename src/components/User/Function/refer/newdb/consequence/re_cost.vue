@@ -26,6 +26,7 @@
                         </el-option>
                     </el-select>
             </el-col>
+            <!--<div id="container" style="max-width:800px;height:400px"></div>-->
             <schart class="wrapper" :canvasId="canvasId" :type="type" :data="data" :options="options"></schart>
             <el-button style="display:block;margin:0 auto; position:relative; top: 15px" @click="save_next">下一步</el-button>
         </div>
@@ -37,6 +38,7 @@
     export default {
         data() {
             return {
+                chart: null,
                 COV: '',
                 l_Quantity: '',
                 u_Quantity: '',
@@ -68,7 +70,7 @@
                     {name: '2017', value: 1795},
                 ],
                 options: {
-                    title: 'Total sales of stores in recent years'
+                    title: 'Repair Cost'
                 }
             }
         },
@@ -87,7 +89,7 @@
         },
 
         components:{
-          Schart
+            Schart
         }
     }
 </script>

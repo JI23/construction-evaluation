@@ -72,7 +72,7 @@
                 };
                 localStorage.setItem("others",JSON.stringify(others));
                 //this.$router.push({name:'re_time'});
-                //提交数据，成功则弹窗提示，不跳转页面
+                //提交数据，成功则弹窗提示，不跳转页面，提交后删除
             },
 
         }

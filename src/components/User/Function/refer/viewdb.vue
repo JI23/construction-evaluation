@@ -42,32 +42,20 @@
                 }],
                 value4: '',
                 data: [{
-                    label: 'General Info',
+                    label: 'A - Substructure',
                     children: [{
-                        label: 'Damage State Type',
-                        children: [{
-                            label: 'Damage State 1',
+                        label: 'A10 - Foundtions',
+                        children:[{
+                            label: 'A101 - Standard Foundations',
                             children: [{
-                                label: 'Consequence Functions'
+                                label: 'A1011 - Wall Foundations',
+                            },{
+                                label: 'A1012 - Wall Foundations',
                             }]
-                        }]
+                        },{
+                            label: 'A102 - Special Foundations'
+                        }]   
                     }],
-                  }, {
-                    label: 'Add Damage State'
-                  }, {
-                    label: 'Add Damage State'
-                  }, {
-                    label: 'Add Damage State'
-                  }, {
-                    label: 'Add Damage State'
-                  }, {
-                    label: 'Add Damage State'
-                  }, {
-                    label: 'Add Damage State'
-                  }, {
-                    label: 'Add Damage State'
-                  }, {
-                    label: 'Add Damage State'
                   }]
             }
         },

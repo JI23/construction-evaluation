@@ -2,7 +2,7 @@
     <div>
         <div class="wrapper9" >
             <el-col>
-                <span class="lebal">项目名称</span>
+                <span class="lebal">name</span>
                 <el-input style="width:100%" v-model="name" placeholder="请输入内容"></el-input>
                 <span class="lebal">median</span>
                 <el-input  style="width:100%" v-model="median" placeholder="请输入内容"></el-input>

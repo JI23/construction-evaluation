@@ -14,7 +14,7 @@
                 <span class="lebal">Data relevance</span>
                 <el-select v-model="relevance" placeholder="请选择">
                     <el-option
-                        v-for="item in options2"
+                        v-for="item in options1"
                         :key="item.value"
                         :label="item.label"
                         :value="item.value">
@@ -24,7 +24,7 @@
                 <span class="lebal">Documentation quailty</span>
                 <el-select v-model="quailty" placeholder="请选择">
                     <el-option
-                        v-for="item in options3"
+                        v-for="item in options1"
                         :key="item.value"
                         :label="item.label"
                         :value="item.value">
@@ -34,7 +34,7 @@
                 <span class="lebal">Retionality</span>
                 <el-select v-model="retionality" placeholder="请选择">
                     <el-option
-                        v-for="item in options4"
+                        v-for="item in options1"
                         :key="item.value"
                         :label="item.label"
                         :value="item.value">
@@ -60,28 +60,16 @@
             return {
                 options1: [{
                     value: '选项1',
-                    label: '黄金糕'
+                    label: 'N/A'
                 }, {
                     value: '选项2',
-                    label: '双皮奶'
-                }],
-
-                options2: [{
-                    value: '选项1',
-                    label: '黄金糕'
+                    label: 'Marginal'
                 }, {
-                    value: '选项2',
-                    label: '双皮奶'
-                }],
-
-                options3: [{
-                    value: '选项1',
-                    label: '黄金糕'
-                }],
-
-                options4: [{
-                    value: '选项1',
-                    label: '黄金糕'
+                    value: '选项3',
+                    label: 'Average'
+                }, {
+                    value: '选项4',
+                    label: 'Superior'
                 }],
                 data: '',
                 relevance: '',
